@@ -38,7 +38,7 @@ def test_present_zero():
 
 def test_non_number(tmp_path):
     csv = tmp_path/ "bad.csv"
-    csv.write_text('sample_id, height_m\nA, 1.5\nB, non-a-number\n', encoding ="utf-8")
+    csv.write_text("sample_id,height_m\nA,1.5\nB,non-a-number\n", encoding ="utf-8")
 
     errors = []
     data = ci_course.load_measurements(csv, errors=errors)
