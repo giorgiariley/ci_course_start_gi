@@ -25,6 +25,9 @@ docs = [
     "sphinx",
 ]
 
+[tool.setuptools.package-data]
+ci_course = ["data/*.csv"]
+
 [project.scripts]
 ci-course = "ci_course.cli:main"
 
