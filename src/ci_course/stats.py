@@ -40,6 +40,20 @@ def summarise(values):
 
 
 def count_missing(values):
+    """Count the number of missing values
+    
+    Parameters
+    ----------
+    
+    values: array_like
+            The measurements to summarise. Missing values should be ``nan``.
+
+    Returns
+    -------
+    integer number of nans
+
+    
+    """
     values = np.asarray(values, dtype=float)
     return int(np.isnan(values).sum())
 
