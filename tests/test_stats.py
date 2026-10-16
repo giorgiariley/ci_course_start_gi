@@ -31,6 +31,6 @@ def test_counts_missing_values():
     assert ci_course.count_missing(np.array([1.0, 2.0])) == 0
 
 def test_present_zero():
-    summary =  ci_course.summarise(np.array([np.nan, np.nan, np.nan])) == 0
+    summary =  ci_course.summarise(np.array([np.nan, np.nan, np.nan]))
 
     assert summary["n"] == 0
