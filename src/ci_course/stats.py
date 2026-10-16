@@ -41,7 +41,7 @@ def summarise(values):
 
 def count_missing(values):
     """
-    Count the number of missing values
+    Count the number of missing values.
 
     Parameters
     ----------
