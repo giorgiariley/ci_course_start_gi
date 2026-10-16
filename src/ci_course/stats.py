@@ -45,7 +45,6 @@ def count_missing(values):
 
     Parameters
     ----------
-
     values: array_like
             The measurements to summarise. Missing values should be ``nan``.
 
