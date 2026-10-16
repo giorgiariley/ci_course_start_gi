@@ -45,7 +45,6 @@ def load_measurements(path=None, errors=None):
 
     if errors is None:
         errors = []
-        
 
     with open(path, newline="", encoding="utf-8") as handle:
         reader = csv.DictReader(handle)
@@ -59,7 +58,7 @@ def load_measurements(path=None, errors=None):
                     continue
                 try:
                     columns[name].append(float(raw))
-                except:
+                except ValueError:
                     columns[name].append(float("nan"))
                     errors.append(row)
 
