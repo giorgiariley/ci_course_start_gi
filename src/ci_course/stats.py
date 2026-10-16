@@ -51,8 +51,6 @@ def count_missing(values):
     Returns
     -------
     integer number of nans
-
-    
     """
     values = np.asarray(values, dtype=float)
     return int(np.isnan(values).sum())
