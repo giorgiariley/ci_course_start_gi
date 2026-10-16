@@ -34,3 +34,14 @@ def test_present_zero():
     summary =  ci_course.summarise(np.array([np.nan, np.nan, np.nan]))
 
     assert summary["n"] == 0
+
+
+def test_non_number(tmp_path):
+    csv = tmp_path/ "bad.csv"
+    csv.write_test('sample_id, height_m\nA, 1.5\nB, non-a-number\n', encoding ="utf-8")
+
+    errors = []
+    data = ci_course.load_measurements(csv, errors=errors)
+
+    assert np.isnan(data["height_m"][1])
+    assert len(errors) == 1
